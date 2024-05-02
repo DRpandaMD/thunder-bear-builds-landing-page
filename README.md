@@ -9,9 +9,15 @@ Preface:  I am doing this truely the cloud native way.  Nearly 99% of this if no
 2. Initialize project with `npm init vite` selecting Vanilla Javascript and Vanilla Javascript typing, no typescript
 3. Follow the promt `npm install`, `npm run dev`
 
+## Pivoting
+
+While digging through the docs at [vitejs.dev](https://vitejs.dev/guide/static-deploy), I quickly discovered that I will have to change things around.  My initial plan was to get this vite.js app running, wrap it in a docker container (nginx), the image ready for Google Artifact Registry and finish up configuring Google Cloud Run, then wrap all that toil in a Github Actions CI/CD pipeline.
+
+Well, since I am already using Google Cloud, I am going to switch to Google Firebase.  Which is fine as I had been wanting to use Firebase for some time and then check out some material from the mad lads over at [fireship.io](https://fireship.io/).
 
 ## TODO
 
+* FIGURE OUT WHY VITE IS STUPID!
 * We gotta build and test the dockerfile chatGPT gave us.
 * Then we gotta push the image to the container Registery
 * then we gotta deploy the image to Cloud Run
