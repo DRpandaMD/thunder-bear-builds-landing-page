@@ -8,6 +8,10 @@ Preface:  I am doing this truely the cloud native way.  Nearly 99% of this if no
 1. install [vite.js](https://vitejs.dev/) `npm install vite`
 2. Initialize project with `npm init vite` selecting Vanilla Javascript and Vanilla Javascript typing, no typescript
 3. Follow the promt `npm install`, `npm run dev`
+4. adding firebase tooling `npm install -g firebase-tools`
+5. I also had to add manually the `vite.config.js` file
+6. Firebase set up, since I already have a billable Google Cloud account set up was very easy and all my user data and Google Cloud Project data was there
+7. From the docs [vite.js static deployment](https://vitejs.dev/guide/static-deploy#google-firebase) add in `firebase.json` and `.firebaserc`
 
 ## Pivoting
 
