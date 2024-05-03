@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Added defaults working dir, because github is silly
+    defaults:
+      run:
+        working-directory: ./ThunderBearBuildsLandingPage
     steps:
     - uses: actions/checkout@v2
 
