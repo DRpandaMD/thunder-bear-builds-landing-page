@@ -38,4 +38,5 @@ jobs:
       with:
         args: deploy --only hosting
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Ensure this is still used for older tool versions
+        #FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Ensure this is still used for older tool versions
+        GCP_SA_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
