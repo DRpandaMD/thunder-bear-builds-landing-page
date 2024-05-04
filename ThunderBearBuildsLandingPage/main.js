@@ -1,7 +1,7 @@
 // Standard imports
 // THREE here is for the Library three.js
 // you can get more info here https://threejs.org/
-import './style.css'
+import '/style.css'
 import * as THREE from 'three'
 
 // scene creates a scene

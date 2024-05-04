@@ -8,6 +8,6 @@ export default defineConfig({
   },
   // Configure build options
   build: {
-    outDir: 'public',  // Specifies the output directory for build files: default is "dist"
+    outDir: 'dist',  // Specifies the output directory for build files: default is "dist"
   },
 });
