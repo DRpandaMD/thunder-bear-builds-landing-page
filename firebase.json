@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "./ThunderBearBuildsLandingPage/public",
+    "public": "/public",
     "ignore": [
       "firebase.json",
       "**/.*",
