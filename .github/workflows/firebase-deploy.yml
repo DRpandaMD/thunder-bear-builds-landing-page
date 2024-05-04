@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: public
-        path: public/
+        path: ${{ github.workspace }}/ThunderBearBuildsLandingPage/public
 
     - name: Authenticate with Google Cloud
       env:
