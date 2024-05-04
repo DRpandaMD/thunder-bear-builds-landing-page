@@ -25,6 +25,12 @@ jobs:
 
     - name: Build
       run: npm run build
+    
+    - name: Upload Public Directory as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: public
+        path: public/
 
     - name: Authenticate with Google Cloud
       env:
@@ -32,6 +38,12 @@ jobs:
       run: |
         echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > $HOME/gcloud-service-key.json
         echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud-service-key.json" >> $GITHUB_ENV
+
+    - name: Download Public Directory Artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: public
+        path: public/
 
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
