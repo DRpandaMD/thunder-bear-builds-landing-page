@@ -25,6 +25,9 @@ jobs:
 
     - name: Build
       run: npm run build
+
+    - name: list out public directory 
+      run: ls -la public/
     
     - name: Upload Public Directory as Artifact
       uses: actions/upload-artifact@v3
