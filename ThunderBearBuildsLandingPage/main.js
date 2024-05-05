@@ -34,13 +34,15 @@ renderer.render(scene, camera);
 // then create the mesh object
 // then add it to the scene
 const geometry = new THREE.TorusKnotGeometry(8, 2, 100, 32);
-const material = new THREE.MeshStandardMaterial( {color: 0xf60404} );
+const material = new THREE.MeshStandardMaterial( {color: 0xf60404, 
+  metalness: 0.3,
+  roughness: 0.5} );
 const red_crazy_torus = new THREE.Mesh(geometry, material);
 scene.add(red_crazy_torus);
 
 //lighting
 // adding ambient light so I can see something
-const amb_light = new THREE.AmbientLight( 0x404040 );
+const amb_light = new THREE.AmbientLight( 0x505050 );
 scene.add(amb_light);
 
 
@@ -51,7 +53,7 @@ scene.add(point_light01);
 
 //point light 2, 
 const point_light02 = new THREE.PointLight(0xffffff, 5, 0, 0);
-point_light02.position.set(5, -5, 5);
+point_light02.position.set(8, -10, 10);
 scene.add(point_light02);
 
 
@@ -64,6 +66,24 @@ scene.add(light_helper01, light_helper02);
 //grid helper
 const grid_helper = new THREE.GridHelper(100, 100);
 scene.add(grid_helper);
+
+//adding stars
+function addStar() {
+  const sphere = new THREE.SphereGeometry(0.25, 20, 20);
+  const sphere_material = new THREE.MeshStandardMaterial( { color: 0xffffff });
+  const star = new THREE.Mesh(sphere, sphere_material);
+
+  // lets get some random points
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100) );
+  star.position.set(x, y, z);
+  scene.add(star)
+}
+
+// lets make a ton of stars and stuff thum in this array
+Array(200).fill().forEach(addStar)
+
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
 
 //set up rendering automation
 function animate() {
