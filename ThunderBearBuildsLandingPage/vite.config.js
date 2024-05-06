@@ -10,5 +10,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',  // Specifies the output directory for build files: default is "dist"
   },
-  publicDir: 'public'
+  publicDir: 'public',
+  base: ''
 });
