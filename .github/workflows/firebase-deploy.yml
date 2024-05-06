@@ -26,14 +26,17 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: list out public directory 
+    - name: list out dist directory 
+      run: ls -la dist/
+
+    - name: list out public directory
       run: ls -la public/
     
     - name: Upload Public Directory as Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: public
-        path: ${{ github.workspace }}/ThunderBearBuildsLandingPage/public
+        name: dist
+        path: ${{ github.workspace }}/ThunderBearBuildsLandingPage/dist
 
     - name: Authenticate with Google Cloud
       env:
