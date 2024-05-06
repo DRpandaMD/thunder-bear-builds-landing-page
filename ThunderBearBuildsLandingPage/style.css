@@ -3,3 +3,64 @@ canvas {
   top: 0;
   left: 0;
 }
+
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.95);
+  --spacing: 180px;
+
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px; /* Default font size */
+  line-height: 1.6; /* Adequate line spacing for readability */
+}
+
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+
+section {
+  grid-column: 2 / 8;
+  padding: 1rem;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+}
+
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 6;
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+blockquote {
+  background: var(--dark-bg);
+  margin: 0;
+  padding: 0;
+  grid-column: 6 / 12;
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Makes headings bold */
+}
+
+p {
+  font-weight: 400; /* Normal weight for paragraph text */
+}
